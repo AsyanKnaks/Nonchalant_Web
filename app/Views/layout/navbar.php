@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nonchalant Navbar</title>
-    
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Your CSS File -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
-</head>
-<body>
+<!-- Navbar & Cart Modal Only (included in main.php) -->
 
 <!-- COMPLETE NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm py-2 fixed-top">
@@ -97,6 +84,11 @@
 
         <!-- Right Icons -->
         <div class="d-flex align-items-center gap-3">
+            <!-- Sign In -->
+            <a href="<?= base_url('login') ?>" class="nav-link p-3 rounded-circle hover-lift position-relative" title="Sign In">
+                <i class="bi bi-person fs-5"></i>
+            </a>
+            
             <!-- Search -->
             <a href="<?= base_url('search') ?>" class="nav-link p-3 rounded-circle hover-lift" title="Search">
                 <i class="bi bi-search fs-5"></i>
@@ -193,10 +185,7 @@
 </div>
 
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Collections Toggle Script -->
-<script>
+    <script>
 document.addEventListener('DOMContentLoaded', function() {
     const toggle = document.getElementById('collectionsToggle');
     const container = document.getElementById('collectionsContainer');
@@ -225,7 +214,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-</script>
-
-</body>
-</html>
+    </script>
+<!-- End Navbar -->

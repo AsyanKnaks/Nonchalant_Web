@@ -25,12 +25,8 @@ class Website extends BaseController
 
 public function shop()
 {
-    $productModel = new \App\Models\ProductModel();
-    $products = $productModel->findAll();
-
     return view('collections/shop', [
         'title' => 'Shop',
-        'products' => $products
     ]);
 }
 
@@ -42,4 +38,18 @@ public function contact() { return view('pages/contact', ['title' => 'Contact'])
 
 public function checkout() { return view('pages/checkout', ['title' => 'Checkout']); }
 
+    public function login()
+    {
+        return view('auth/login', ['title' => 'Login']);
+    }
+
+    public function register()
+    {
+        return view('auth/register', ['title' => 'Register']);
+    }
+
+    public function profile()
+    {
+        return view('profile', ['title' => 'Profile']);
+    }
 }

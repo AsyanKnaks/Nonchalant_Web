@@ -86,4 +86,33 @@ class Admin extends BaseController
         ];
         return view('Admin/admin_users', $data);
     }
+
+    // Reports page - Static demo data for sales/inventory by day/month
+    public function reports()
+    {
+        $data = [
+            'title' => 'Reports & Analytics',
+            'sales_data' => [
+                'total_sales' => 156420.50,
+                'order_count' => 247
+            ],
+            'inventory_data' => [
+                'low_stock' => 12,
+                'total_value' => 245890.00
+            ],
+            'daily_sales' => [
+                ['date' => '2024-01-29', 'orders' => 12, 'sales' => 22000, 'avg_order' => 1833.33, 'growth' => 15],
+                ['date' => '2024-01-22', 'orders' => 18, 'sales' => 28000, 'avg_order' => 1555.56, 'growth' => 25],
+                ['date' => '2024-01-15', 'orders' => 15, 'sales' => 15000, 'avg_order' => 1000, 'growth' => -5],
+                ['date' => '2024-01-08', 'orders' => 14, 'sales' => 19000, 'avg_order' => 1357.14, 'growth' => 10],
+                ['date' => '2024-01-01', 'orders' => 11, 'sales' => 12000, 'avg_order' => 1090.91, 'growth' => 8]
+            ],
+            'low_stock_items' => [
+                ['name' => 'Drop 26 Hoodie Black', 'stock' => 3, 'value' => 7500],
+                ['name' => 'Manga Tee White', 'stock' => 5, 'value' => 6000],
+                ['name' => 'DDD Collab Hoodie', 'stock' => 8, 'value' => 12800]
+            ]
+        ];
+        return view('Admin/admin_reports', $data);
+    }
 }
