@@ -1,5 +1,4 @@
 <?= $this->extend('layout/main') ?>
-
 <?= $this->section('content') ?>
 <div id="homepageCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">

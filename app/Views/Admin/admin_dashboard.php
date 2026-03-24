@@ -2,12 +2,8 @@
 <?= $this->section('content') ?>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Dashboard</h1>
+    <h1 class="h2">Admin Dashboard</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
-        <div class="btn-group mr-2">
-            <a href="<?= site_url('admin/orders') ?>" class="btn btn-sm btn-outline-primary">View All Orders</a>
-            <a href="<?= site_url('admin/products') ?>" class="btn btn-sm btn-outline-success">View All Products</a>
-        </div>
     </div>
 </div>
 
@@ -58,8 +54,9 @@
 <div class="row mb-4">
     <div class="col-12">
         <div class="card shadow">
-            <div class="card-header py-3">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
                 <h6 class="m-0 font-weight-bold text-primary">Recent Orders (5)</h6>
+                <a href="<?= site_url('admin/orders') ?>" class="btn btn-sm btn-outline-primary ml-2">View All Orders</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -93,8 +90,9 @@
 <div class="row mb-4">
     <div class="col-12">
         <div class="card shadow">
-            <div class="card-header py-3">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
                 <h6 class="m-0 font-weight-bold text-success">Recent Products (5)</h6>
+                <a href="<?= site_url('admin/products') ?>" class="btn btn-sm btn-outline-success ml-2">View All Products</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -104,10 +102,10 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Price</th>
-                                <th>Stock</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
+                                <th>Stock</th>                               
+                                <th>Collection</th>                            
+                            </tr>                       
+                         </thead>
                         <tbody>
                             <?php foreach($recent_products ?? [] as $product): ?>
                             <tr>
@@ -115,9 +113,9 @@
                                 <td><?= esc($product['name']) ?></td>
                                 <td>$<?= number_format($product['price'], 2) ?></td>
                                 <td><?= $product['stock'] ?></td>
-                                <td><?= date('M d, Y', strtotime($product['created_at'])) ?></td>
-                            </tr>
-                            <?php endforeach; ?>
+                                <td><?= date('M d, Y', strtotime($product['collection'])) ?></td>
+                                </tr>                            
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -130,8 +128,9 @@
 <div class="row">
     <div class="col-12">
         <div class="card shadow">
-            <div class="card-header py-3">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
                 <h6 class="m-0 font-weight-bold text-info">Recent Customers (5)</h6>
+                <a href="<?= site_url('admin/users') ?>" class="btn btn-sm btn-outline-info ml-2">View All Customers</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

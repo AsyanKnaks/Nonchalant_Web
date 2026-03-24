@@ -1,0 +1,93 @@
+/* Profile Page Fixes - Fixed Navbar Overlap */
+.profile-page {
+  padding-top: 120px; /* Navbar height + buffer */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.profile-stats {
+  margin-top: 2rem;
+}
+
+.table-responsive {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  background: white;
+  margin-bottom: 2rem;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: none !important;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  vertical-align: middle;
+  border-color: rgba(0,0,0,0.05);
+  padding: 1.5rem 1rem;
+  line-height: 1.4;
+}
+
+.status-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+
+.btn-sm {
+  min-width: 85px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: none !important;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table tbody td {
+  vertical-align: middle;
+  border-color: rgba(0,0,0,0.05);
+  padding: 1.5rem 1rem;
+}
+
+.status-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.btn-sm {
+  min-width: 80px;
+}
+
+@media (max-width: 768px) {
+  .profile-page {
+    padding-top: 100px;
+  }
+}
+
+/* Enhance cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}

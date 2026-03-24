@@ -21,13 +21,11 @@
                     "name": "Drop 26 Hoodie",
                     "price": 2500,
                     "oldPrice": 3200,
-                    "image": "<?= base_url('assets/images/drop26-hoodie.jpg') ?>",
-                    "colors": ["black", "grey", "navy"],
-                    "sizes": ["XS", "S", "M", "L", "XL"],
+                    "image": "<?= base_url('assets/images/WiredT.webp') ?>",
                     "stock": 12
                  }'>
                 <div class="product-image position-relative overflow-hidden rounded-top-4">
-                    <img src="<?= base_url('assets/images/drop26-hoodie.jpg') ?>" 
+                    <img src="<?= base_url('assets/images/WiredT.webp') ?>" 
                          class="w-100 product-img" style="height: 300px; object-fit: cover;">
                     <div class="product-badge position-absolute top-3 start-3">
                         <span class="badge bg-danger rounded-pill px-3 py-1 fw-bold">-22%</span>
@@ -61,20 +59,17 @@
                     "name": "Drop 26 Tee",
                     "price": 1200,
                     "oldPrice": 1500,
-                    "image": "<?= base_url('assets/images/drop26-tee.jpg') ?>",
-                    "colors": ["black", "white", "red"],
-                    "sizes": ["S", "M", "L", "XL"],
+                    "image": "<?= base_url('assets/product/WiredT.webp') ?>",
                     "stock": 25
                  }'>
                 <!-- Same structure as above -->
                 <div class="product-image position-relative overflow-hidden rounded-top-4">
-                    <img src="<?= base_url('assets/images/drop26-tee.jpg') ?>" 
+                    <img src="<?= base_url('assets/product/WiredT.webp') ?>" 
                          class="w-100 product-img" style="height: 300px; object-fit: cover;">
                     <div class="product-badge position-absolute top-3 start-3">
                         <span class="badge bg-success rounded-pill px-3 py-1 fw-bold">-20%</span>
                     </div>
                     <div class="product-hover position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-90 text-white">
-                        <small class="d-block mb-1">3 Colors • 4 Sizes</small>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="h6 mb-0 fw-bold">Quick View</span>
                             <i class="bi bi-arrow-right fs-5"></i>
@@ -93,8 +88,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Add more products... -->
     </div>
 </section>
 
@@ -143,9 +136,6 @@
                         <div class="d-grid gap-2">
                             <button id="addToCartBtn" class="btn btn-dark fw-bold py-3 fs-5 rounded-pill shadow-lg">
                                 Add to Cart - ₱<span id="cartTotal"></span>
-                            </button>
-                            <button class="btn btn-outline-dark fw-bold py-3 rounded-pill">
-                                <i class="bi bi-heart me-2"></i>Add to Wishlist
                             </button>
                         </div>
                         
