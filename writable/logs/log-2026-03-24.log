@@ -166,3 +166,107 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-24 11:13:23 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: admin/orders]
+in APPPATH\Views\Admin\admin_orders.php on line 28.
+ 1 APPPATH\Views\Admin\admin_orders.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_orders.php', 28)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_orders.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('Admin/admin_orders', [], true)
+ 5 APPPATH\Controllers\Admin.php(58): view('Admin/admin_orders', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->orders()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-24 11:13:26 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: admin/users]
+in APPPATH\Views\Admin\admin_users.php on line 32.
+ 1 APPPATH\Views\Admin\admin_users.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_users.php', 32)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_users.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('Admin/admin_users', [], true)
+ 5 APPPATH\Controllers\Admin.php(87): view('Admin/admin_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->users()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-24 11:13:28 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: admin/users]
+in APPPATH\Views\Admin\admin_users.php on line 32.
+ 1 APPPATH\Views\Admin\admin_users.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_users.php', 32)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_users.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('Admin/admin_users', [], true)
+ 5 APPPATH\Controllers\Admin.php(87): view('Admin/admin_users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->users()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-24 11:16:22 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\Admin\admin_dashboard.php on line 78.
+ 1 APPPATH\Views\Admin\admin_dashboard.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_dashboard.php', 78)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('Admin/admin_dashboard', [], true)
+ 5 APPPATH\Controllers\Admin.php(43): view('Admin/admin_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-24 11:18:57 --> ErrorException: Undefined array key "descriptions"
+[Method: GET, Route: admin/products]
+in APPPATH\Views\Admin\admin_products.php on line 28.
+ 1 APPPATH\Views\Admin\admin_products.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "descriptions"', 'C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_products.php', 28)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_products.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('Admin/admin_products', [], true)
+ 5 APPPATH\Controllers\Admin.php(75): view('Admin/admin_products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->products()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-24 11:19:03 --> ErrorException: Undefined array key "descriptions"
+[Method: GET, Route: admin/products]
+in APPPATH\Views\Admin\admin_products.php on line 28.
+ 1 APPPATH\Views\Admin\admin_products.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "descriptions"', 'C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_products.php', 28)
+ 2 SYSTEMPATH\View\View.php(238): include('C:\\xampp\\htdocs\\Nonchalant\\app\\Views\\Admin\\admin_products.php')
+ 3 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('Admin/admin_products', [], true)
+ 5 APPPATH\Controllers\Admin.php(75): view('Admin/admin_products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->products()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-24 11:57:31 --> ErrorException: Cannot declare class App\Controllers\Admin, because the name is already in use
+[Method: GET, Route: admin/products]
+in APPPATH\Views\Admin\admin_products.php on line 3.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-03-24 11:59:02 --> ErrorException: Cannot declare class App\Controllers\Admin, because the name is already in use
+[Method: GET, Route: admin/products]
+in APPPATH\Views\Admin\admin_products.php on line 3.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-03-24 11:59:03 --> ErrorException: Cannot declare class App\Controllers\Admin, because the name is already in use
+[Method: GET, Route: admin/products]
+in APPPATH\Views\Admin\admin_products.php on line 3.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-03-24 11:59:03 --> ErrorException: Cannot declare class App\Controllers\Admin, because the name is already in use
+[Method: GET, Route: admin/products]
+in APPPATH\Views\Admin\admin_products.php on line 3.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-03-24 11:59:04 --> ErrorException: Cannot declare class App\Controllers\Admin, because the name is already in use
+[Method: GET, Route: admin/products]
+in APPPATH\Views\Admin\admin_products.php on line 3.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

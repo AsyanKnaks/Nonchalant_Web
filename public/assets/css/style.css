@@ -1,22 +1,40 @@
-/* Nonchalant.ph Custom Styles - Restored Original Dropdown */
+/* Nonchalant.ph Custom Styles - Homepage Conflicts REMOVED */
 :root {
-  --primary: #ff6b6b;
-  --secondary: #4ecdc4;
-  --dark: #2c3e50;
+  --primary: #ffffff;
+  --secondary: #37c2b9;
+  --dark: #f81313;
   --light: #ecf0f1;
   --shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
 }
 
 * { box-sizing: border-box; }
+
 body { 
   font-family: 'Arial', sans-serif; 
   line-height: 1.6; 
   color: var(--dark);
-  padding-top: 76px;
 }
+
+#homepageCarousel {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+}
+
+#homepageCarousel .carousel-item img {
+  height: 89vh !important;
+  width: 100vw !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+#homepageCarousel .carousel-inner,
+#homepageCarousel .carousel-item {
+  height: 89vh !important;
+}
+
 .navbar { z-index: 1030; }
 
-/* Restored Original Collections Dropdown */
 .collections-container {
     position: fixed !important;
     top: 4.9rem !important;
@@ -161,7 +179,9 @@ body {
     transform: rotate(180deg);
 }
 
-/* Dropdown Responsive */
+/* REMOVED: body.homepage - handled by homepage.css */
+
+/* Dropdown Responsive - UNCHANGED */
 @media (max-width: 991.98px) {
     .collections-right { 
         width: 100%; 
@@ -200,41 +220,58 @@ body {
     }
 }
 
-/* Other Styles (kept) */
+/* NON-HOMEPAGE STYLES ONLY */
 .hover-lift { transition: transform 0.2s; }
 .hover-lift:hover { transform: translateY(-2px); }
 .cart-badge { min-width: 18px; height: 18px; font-size: 0.75rem; }
-.hero { 
-  background: linear-gradient(135deg, var(--primary), var(--secondary)); 
-  color: white; padding: 100px 0; text-align: center; 
-  border-radius: 1rem; margin: 2rem 0;
-}
 .card, .card-news { 
-  transition: all 0.3s ease; border: none; box-shadow: var(--shadow);
-  border-radius: 1rem; overflow: hidden;
+  transition: all 0.3s ease; 
+  border: none; 
+  box-shadow: var(--shadow);
+  border-radius: 1rem; 
+  overflow: hidden;
 }
 .card:hover, .card-news:hover { 
-  transform: translateY(-8px); box-shadow: 0 1rem 2rem rgba(0,0,0,0.2); 
+  transform: translateY(-8px); 
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2); 
 }
+
 .faq-item { margin-bottom: 1rem; }
 .btn-non { 
   background: linear-gradient(135deg, var(--primary), var(--secondary)); 
-  border: none; color: white; border-radius: 50px; padding: 0.75rem 2rem;
-  font-weight: 600; transition: all 0.3s;
+  border: none; 
+  color: white; 
+  border-radius: 50px; 
+  padding: 0.75rem 2rem;
+  font-weight: 600; 
+  transition: all 0.3s;
 }
-.btn-non:hover { transform: translateY(-2px); box-shadow: var(--shadow); color: white; }
+.btn-non:hover { 
+  transform: translateY(-2px); 
+  box-shadow: var(--shadow); 
+  color: white; 
+}
+
 .contact-form { max-width: 600px; margin: 0 auto; }
 .accordion-button { font-weight: 600; }
 .lead { font-size: 1.25rem; font-weight: 400; }
 
-.modal-dialog.modal-dialog-end { position: fixed; right: 0; margin: 0; height: 100vh; }
+.modal-dialog.modal-dialog-end { 
+  position: fixed; 
+  right: 0; 
+  margin: 0; 
+  height: 100vh; 
+}
 .modal-content.shadow-4 { box-shadow: var(--shadow) !important; }
 
-/* Responsive */
+/* Responsive - REMOVED homepage body padding */
 @media (max-width: 768px) { 
-  body { padding-top: 70px; }
-  .hero { padding: 60px 20px; margin: 1rem 0; border-radius: 0; }
-  .navbar-collapse { background: rgba(255,255,255,0.98); margin-top: 0.5rem; border-radius: 0.5rem; padding: 1rem; }
+  .navbar-collapse { 
+    background: rgba(255,255,255,0.98); 
+    margin-top: 0.5rem; 
+    border-radius: 0.5rem; 
+    padding: 1rem; 
+  }
   .modal-dialog-end { width: 90vw; }
 }
 @media (max-width: 576px) { 

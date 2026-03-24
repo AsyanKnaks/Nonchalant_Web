@@ -102,10 +102,10 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Price</th>
-                                <th>Stock</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
+                                <th>Stock</th>                               
+                                <th>Collection</th>                            
+                            </tr>                       
+                         </thead>
                         <tbody>
                             <?php foreach($recent_products ?? [] as $product): ?>
                             <tr>
@@ -113,9 +113,9 @@
                                 <td><?= esc($product['name']) ?></td>
                                 <td>$<?= number_format($product['price'], 2) ?></td>
                                 <td><?= $product['stock'] ?></td>
-                                <td><?= date('M d, Y', strtotime($product['created_at'])) ?></td>
-                            </tr>
-                            <?php endforeach; ?>
+                                <td><?= date('M d, Y', strtotime($product['collection'])) ?></td>
+                                </tr>                            
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
