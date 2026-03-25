@@ -1,0 +1,13 @@
+Buyer
+username: UserDev@nonchalant.ph
+pass: testing22
+
+Seller / Admin
+username: Nonchalant.Admin@nonchlt.ph
+pass: 4dm1n2026
+
+Access Link to Dashboard:
+http://localhost/Nonchalant/public/admin
+
+Hosted link: (InfinityFree.com)
+https://nonchalant.page.gd/

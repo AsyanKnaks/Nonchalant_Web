@@ -1,0 +1,47 @@
+#homepageCarousel {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+}
+
+#homepageCarousel .carousel-inner,
+#homepageCarousel .carousel-item {
+    height: 89vh !important;
+}
+
+#homepageCarousel .carousel-item img {
+    height: 89vh !important;
+    width: 100vw !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+#homepageCarousel .carousel-caption {
+    bottom: 12%;
+    z-index: 2;
+}
+
+#homepageCarousel .carousel-caption h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+#homepageCarousel .carousel-caption p {
+    font-size: 1.1rem;
+    max-width: 520px;
+    margin: 0 auto 1.25rem;
+}
+
+.hero-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}

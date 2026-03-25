@@ -1,0 +1,94 @@
+.shop-toolbar {
+    position: relative;
+}
+
+.filter-area {
+    position: relative;
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    z-index: 20;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateX(-20px) translateY(-10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.filter-dropdown.show {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    pointer-events: auto;
+}
+
+#sortSelect {
+    min-width: 220px;
+}
+
+@media (max-width: 768px) {
+    .shop-toolbar {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .sort-area {
+        width: 100%;
+    }
+
+    #sortSelect {
+        width: 100%;
+    }
+
+    .filter-dropdown {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+/* PAGINATION WRAPPER */
+.pagination {
+    margin-top: 20px;
+    gap: 6px;
+}
+
+/* DEFAULT LINKS */
+.pagination li a,
+.pagination li span {
+    display: block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.pagination li a:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* ACTIVE PAGE */
+.pagination li.active span {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* DISABLED (Prev/Next edge) */
+.pagination li.disabled span {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* OPTIONAL: CENTER ALIGN */
+.pagination {
+    justify-content: center;
+}
+

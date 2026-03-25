@@ -18,7 +18,7 @@
         <a class="navbar-brand col-md-3 mr-0 px-3" href="<?= base_url() ?>">NonChalant</a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="<?= site_url() ?>">Sign out</a>
+                <a class="nav-link" href="<?= site_url('admin/logout') ?>">Sign out</a>
             </li>
         </ul>
     </nav>

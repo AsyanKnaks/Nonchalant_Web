@@ -1,118 +1,139 @@
 <?= $this->extend('Admin/admin_layout') ?>
 <?= $this->section('content') ?>
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Orders</h1>
-    <button class="btn btn-success" data-toggle="modal" data-target="#orderModal" onclick="openCreateOrderModal()">
-        <span data-feather="plus"></span> New Order
-    </button>
-</div>
+<?php $editingId = service('request')->getGet('edit'); ?>
+
+<h2>Orders</h2>
+
+<?php if (session()->getFlashdata('success')): ?>
+    <div class="alert alert-success"><?= esc(session()->getFlashdata('success')) ?></div>
+<?php endif; ?>
+
+<?php if (session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger"><?= esc(session()->getFlashdata('error')) ?></div>
+<?php endif; ?>
 
 <div class="table-responsive">
-    <table class="table table-striped table-sm">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>User ID</th>
-                <th>Total</th>
-                <th>Created</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach($orders ?? [] as $order): ?>
-            <tr>
-                <td><?= $order['id'] ?></td>
-                <td><?= $order['user_id'] ?></td>
-                <td><strong>$<?= number_format($order['total'], 2) ?></strong></td>
-                <td><?= date('M j, H:i', strtotime($order['created_at'])) ?></td>
-                <td>
-                    <button class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#orderModal" onclick="openEditOrderModal(<?= $order['id'] ?>)">
-                        <span data-feather="edit"></span>
-                    </button>
-                    <button class="btn btn-sm btn-outline-danger" onclick="confirmDeleteOrder(<?= $order['id'] ?>)">
-                        <span data-feather="trash-2"></span>
-                    </button>
-                </td>
-            </tr>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Total</th>
+            <th>Shipping</th>
+            <th>Payment</th>
+            <th>Shipping Address</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th>Actions</th>
+        </tr>
+
+        <?php if (!empty($orders)): ?>
+            <?php foreach ($orders as $order): ?>
+                <?php if ($editingId == $order['id']): ?>
+                    <tr>
+                        <td><?= esc($order['id']) ?></td>
+                        <td><?= esc($order['user_id']) ?></td>
+                        <td><strong>₱<?= number_format((float) $order['total'], 2) ?></strong></td>
+
+                        <td>
+                            <?php if (($order['shipping_method'] ?? '') === 'Express'): ?>
+                                <span class="badge badge-danger">Express</span>
+                            <?php else: ?>
+                                <span class="badge badge-secondary">Standard</span>
+                            <?php endif; ?>
+                        </td>
+
+                        <td><?= esc($order['payment_method'] ?? '-') ?></td>
+                        <td><?= esc($order['shipping_address'] ?? '-') ?></td>
+
+                        <td>
+                            <form method="post" action="<?= base_url('admin/orders/update/' . $order['id']) ?>">
+                                <?= csrf_field() ?>
+                                <select name="status" class="form-control form-control-sm">
+                                    <option value="Processing" <?= (($order['status'] ?? '') === 'Processing') ? 'selected' : '' ?>>Processing</option>
+                                    <option value="Shipped" <?= (($order['status'] ?? '') === 'Shipped') ? 'selected' : '' ?>>Shipped</option>
+                                    <option value="Delivered" <?= (($order['status'] ?? '') === 'Delivered') ? 'selected' : '' ?>>Delivered</option>
+                                    <option value="Cancel Requested" <?= (($order['status'] ?? '') === 'Cancel Requested') ? 'selected' : '' ?>>Cancel
+                                        Requested</option>
+                                </select>
+                        </td>
+
+                        <td>
+                            <?= !empty($order['created_at']) ? date('M d, Y H:i', strtotime($order['created_at'])) : '-' ?>
+                        </td>
+
+                        <td>
+                            <?= !empty($order['updated_at']) ? date('M d, Y H:i', strtotime($order['updated_at'])) : '-' ?>
+                        </td>
+
+                        <td>
+                                <button type="submit" class="btn btn-success btn-sm">Save</button>
+                                <a href="<?= base_url('admin/orders') ?>" class="btn btn-secondary btn-sm">Cancel</a>
+                            </form>
+
+                            <form method="post" action="<?= base_url('admin/orders/delete/' . $order['id']) ?>" style="display:inline;">
+                                <?= csrf_field() ?>
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete Order #<?= esc($order['id']) ?>?')">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php else: ?>
+                    <tr>
+                        <td><?= esc($order['id']) ?></td>
+                        <td><?= esc($order['user_id']) ?></td>
+                        <td><strong>₱<?= number_format((float) $order['total'], 2) ?></strong></td>
+
+                        <td>
+                            <?php if (($order['shipping_method'] ?? '') === 'Express'): ?>
+                                <span class="badge badge-danger">Express</span>
+                            <?php else: ?>
+                                <span class="badge badge-secondary">Standard</span>
+                            <?php endif; ?>
+                        </td>
+
+                        <td><?= esc($order['payment_method'] ?? '-') ?></td>
+                        <td><?= esc($order['shipping_address'] ?? '-') ?></td>
+
+                        <td>
+                            <?php
+                                $badgeClass = 'secondary';
+                                if (($order['status'] ?? '') === 'Processing')
+                                    $badgeClass = 'warning';
+                                if (($order['status'] ?? '') === 'Shipped')
+                                    $badgeClass = 'primary';
+                                if (($order['status'] ?? '') === 'Delivered')
+                                    $badgeClass = 'success';
+                                if (($order['status'] ?? '') === 'Cancel Requested')
+                                    $badgeClass = 'danger';
+                                ?>
+                            <span class="badge badge-<?= $badgeClass ?>">
+                                <?= esc($order['status'] ?? '-') ?>
+                            </span>
+                        </td>
+
+                        <td>
+                            <?= !empty($order['created_at']) ? date('M d, Y H:i', strtotime($order['created_at'])) : '-' ?>
+                        </td>
+
+                        <td>
+                            <?= !empty($order['updated_at']) ? date('M d, Y H:i', strtotime($order['updated_at'])) : '-' ?>
+                        </td>
+
+                        <td>
+                            <a href="<?= base_url('admin/orders?edit=' . $order['id']) ?>" class="btn btn-primary btn-sm">Edit</a>
+                        </td>
+                    </tr>
+                <?php endif; ?>
             <?php endforeach; ?>
-        </tbody>
+        <?php else: ?>
+            <tr>
+                <td colspan="10" class="text-center text-muted">No orders found.</td>
+            </tr>
+        <?php endif; ?>
     </table>
 </div>
 
-<!-- Order Modal -->
-<div class="modal fade" id="orderModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="orderModalTitle">New Order</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <form id="orderForm">
-                <div class="modal-body">
-                    <input type="hidden" id="orderId">
-                    <div class="form-group">
-                        <label>User ID</label>
-                        <input type="number" class="form-control" id="orderUserId" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Total Amount</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                            <input type="number" step="0.01" class="form-control" id="orderTotal" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary" id="orderSaveBtn">Save Order</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<?= $this->endSection() ?>
-
-<?= $this->section('scripts') ?>
-<script>
-let currentOrderId = null;
-
-function openCreateOrderModal() {
-    document.getElementById('orderModalTitle').textContent = 'New Order';
-    document.getElementById('orderForm').reset();
-    currentOrderId = null;
-    $('#orderModal').modal('show');
-}
-
-function openEditOrderModal(id) {
-    currentOrderId = id;
-    document.getElementById('orderModalTitle').textContent = `Edit Order #${id}`;
-    
-    document.getElementById('orderUserId').value = 25 + id;
-    document.getElementById('orderTotal').value = (500 + id * 10).toFixed(2);
-    
-    $('#orderModal').modal('show');
-}
-
-function confirmDeleteOrder(id) {
-    if(confirm(`Delete Order #${id}?`)) {
-        alert(`Order #${id} deleted! (Demo)`);
-        location.reload();
-    }
-}
-
-document.getElementById('orderForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = {
-        id: currentOrderId,
-        user_id: document.getElementById('orderUserId').value,
-        total: document.getElementById('orderTotal').value
-    };
-    
-    console.log('Saving Order:', formData);
-    alert(currentOrderId ? 'Order Updated!' : 'Order Created!');
-    $('#orderModal').modal('hide');
-});
-</script>
 <?= $this->endSection() ?>
